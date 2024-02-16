@@ -8,10 +8,11 @@ final_dict = {'tuple': my_tuple, 'list': my_list, 'dict': my_dict, 'set': my_set
 print(my_tuple[-1])
 
 my_list.append('last')
-popped = my_list.pop(2)  # Fixed: Удаляем по ключу
+popped = my_list.pop(1)  # Fixed: Удаляем по ключу (индексация начинается с 0)
 print(popped)  # Выведем на печать удаленный элемент
 
-my_dict['i am a tuple'] = ('cool', 2, 'black', 4, 'pink')  # Fixed: Добавляем tuple
+my_dict[('i am a tuple',)] = ('cool', 2, 'black', 4, 'pink')  # Fixed: Добавляем tuple
+# не забываем про запятую, если элемент один
 my_dict.pop(5)  # 5: 'oneTwoOne'
 
 my_set.add('new element')
