@@ -1,7 +1,5 @@
 def repeat_me(count):
-
     def multiplier(func):
-
         def wrapper(*args):
             for i in range(count):
                 func(*args)

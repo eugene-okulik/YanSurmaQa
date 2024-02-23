@@ -7,11 +7,10 @@ PRICE_LIST = '''тетрадь 50р
 рюкзак 500р'''
 
 price_list = PRICE_LIST.split()
-items = price_list[::2]  # Получим список товаров
-str_prices = price_list[1::2]  # Получим цены
+items = price_list[::2]
+str_prices = price_list[1::2]
 
-prices = [int(price.replace('р', '')) for price in str_prices]  # Сгенерируем список с int ценами
+prices = [int(price.replace('р', '')) for price in str_prices]
 
 price_dict = dict(zip(items, prices))
 print(price_dict)
-
