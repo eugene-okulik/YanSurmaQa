@@ -9,7 +9,6 @@ class Flowers:
 
 
 class Roses(Flowers):
-    """have_thorns are Bool value"""
 
     def __init__(self, name, lifetime, color, stem_length, price, have_thorns):
         super().__init__(name, lifetime, color, stem_length, price)
@@ -17,7 +16,6 @@ class Roses(Flowers):
 
 
 class SunFlower(Flowers):
-    """have_thorns Oilseeds / Hybrids / Сonfectionery  """
 
     def __init__(self, name, lifetime, color, stem_length, price, form):
         super().__init__(name, lifetime, color, stem_length, price)
