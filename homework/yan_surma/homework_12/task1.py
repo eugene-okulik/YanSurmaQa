@@ -10,15 +10,15 @@ class Flowers:
 
 class Roses(Flowers):
 
-    def __init__(self, name, lifetime, color, stem_length, price, have_thorns):
-        super().__init__(name, lifetime, color, stem_length, price)
+    def __init__(self, lifetime, color, stem_length, price, have_thorns):
+        super().__init__('Rose', lifetime, color, stem_length, price)
         self.have_thorns = have_thorns
 
 
 class SunFlower(Flowers):
 
-    def __init__(self, name, lifetime, color, stem_length, price, form):
-        super().__init__(name, lifetime, color, stem_length, price)
+    def __init__(self, lifetime, color, stem_length, price, form):
+        super().__init__('Sunflower', lifetime, color, stem_length, price)
         self.form = form
 
 
@@ -40,47 +40,55 @@ class BouquetOfFlowers:
         return round(result, 2)
 
     def sort_by_color(self):
-        colors = [flower.color for flower in self.flower_bucket]
-        colors.sort()
-        return colors
+        sorted_by_color = sorted(self.flower_bucket, key=lambda flower: flower.color)
+        return f'Sort flowers by color: {sorted_by_color}'
 
     def sort_by_stem_length(self):
-        stem_lengths = [flower.stem_length for flower in self.flower_bucket]
-        stem_lengths.sort()
-        return stem_lengths
+        sorted_by_stem_length = sorted(self.flower_bucket, key=lambda flower: flower.stem_length)
+        return f'Sort flowers stem length: {sorted_by_stem_length}'
 
     def sort_by_price(self):
-        prices = [flower.price for flower in self.flower_bucket]
-        prices.sort()
-        return prices
+        sorted_by_price = sorted(self.flower_bucket, key=lambda flower: flower.price)
+        return f'Sort flowers by price: {sorted_by_price}'
 
     def search_by_name(self, name_value):
-        names = [flower.name for flower in self.flower_bucket]
-        if name_value in names:
-            return True
+        for flower in self.flower_bucket:
+            if name_value == flower.name:
+                return f'Name: {flower.name}, flower: {flower}'
 
-    def search_by_lifetime(self, name_value):
-        names = [flower.name for flower in self.flower_bucket]
-        if name_value in names:
-            return True
+    def search_by_color(self, color_value):
+        for flower in self.flower_bucket:
+            if color_value == flower.color:
+                return f'Color: {flower.color}, flower: {flower}'
+
+    def search_by_lifetime(self, lifetime_value):
+        for flower in self.flower_bucket:
+            if lifetime_value == flower.lifetime:
+                return f'Lifetime: {flower.lifetime}, flower: {flower}'
 
 
 flower1 = Flowers('Lily', 5, 'Blue', 50, 20)
-flower2 = Roses('Rose', 3, 'Black', 100, 50, True)
-flower3 = SunFlower('Sunflower', 14, 'Yellow', 250, 10, 'Hybrids')
-print(flower1)
-print(flower2)
-print(flower3)
+flower2 = Roses(3, 'Black', 100, 50, True)
+flower3 = SunFlower(14, 'Yellow', 250, 10, 'Hybrids')
 
-bucket = BouquetOfFlowers()
+bucket_of_flowers = BouquetOfFlowers()
 
-bucket.add_flower(flower1)
-bucket.add_flower(flower2)
-bucket.add_flower(flower3)
-
-print(bucket.calc_price_of_bucket())
-print(bucket.average_lifetime())
-print(bucket.sort_by_color())
-print(bucket.sort_by_price())
-print(bucket.sort_by_stem_length())
-print(bucket.search_by_name('Sunflower'))
+bucket_of_flowers.add_flower(flower1)
+bucket_of_flowers.add_flower(flower2)
+bucket_of_flowers.add_flower(flower3)
+print('Search by name')
+print(bucket_of_flowers.search_by_name('Lily'))
+print(bucket_of_flowers.search_by_name('Rose'))
+print(bucket_of_flowers.search_by_name('Sunflower'))
+print('Search by lifetime')
+print(bucket_of_flowers.search_by_lifetime(5))
+print(bucket_of_flowers.search_by_lifetime(3))
+print(bucket_of_flowers.search_by_lifetime(14))
+print('Search by color')
+print(bucket_of_flowers.search_by_color('Blue'))
+print(bucket_of_flowers.search_by_color('Black'))
+print(bucket_of_flowers.search_by_color('Yellow'))
+print('Sort')
+print(bucket_of_flowers.sort_by_color())
+print(bucket_of_flowers.sort_by_stem_length())
+print(bucket_of_flowers.sort_by_price())
