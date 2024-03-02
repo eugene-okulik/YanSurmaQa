@@ -3,7 +3,7 @@ import os
 
 current_path = os.path.dirname(__file__)
 homework_path = os.path.dirname(os.path.dirname(current_path))  # Выход на 2 уровня выше
-eugene_file_path = os.path.join(homework_path, 'eugene_okulik\\hw_13', 'data.txt')
+eugene_file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt')
 
 with open(eugene_file_path, 'r') as eugene_file:
     data = eugene_file.read()
