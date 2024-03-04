@@ -91,7 +91,7 @@ SELECT students.name AS student,
        subjets.title AS subject,
        lessons.title AS lesson
 FROM students
-JOIN `groups` ON `groups`.id = students.group_id 
+JOIN `groups` ON `groups`.id = students.group_id
 JOIN books ON books.taken_by_student_id = students.id
 JOIN marks ON marks.student_id = students.id
 JOIN lessons ON lessons.id = marks.lesson_id
@@ -105,7 +105,6 @@ print(data_all_info)
 print('Выведем данныые в более удобном виде: ')
 for data in data_all_info:
     print(data)
-
 
 db.commit()
 db.close()
