@@ -17,9 +17,9 @@ def set_up():
 
 
 @pytest.fixture()
-def new_object_id_and_clear():
+def new_object_id():
     body = {
-        "name": "Apple MacBook Pro 16",
+        "name": "Apple MacBook M3 Pro",
         "data": {
             "year": 2019,
             "price": 1849.99,
@@ -31,17 +31,15 @@ def new_object_id_and_clear():
     response = requests.post('https://api.restful-api.dev/objects',
                              json=body,
                              headers=headers)
-    object_id = response.json()['id']
-    print(f'add {object_id}')
+    object_id = response.json()["id"]
     yield object_id
-    print(f'delete object {object_id}')
     requests.delete(f'https://api.restful-api.dev/objects/{object_id}')
 
 
-@pytest.mark.critical
-def test_add_object(start_session, set_up):
+@pytest.mark.parametrize('names', ["Lenovo Legion Y7000P", "MSI Prestige 16 AI Evo", "ASUS ROG Strix G18 2024"])
+def test_add_object(start_session, set_up, names):
     body = {
-        "name": "Apple MacBook Pro 16",
+        "name": names,
         "data": {
             "year": 2019,
             "price": 1849.99,
@@ -58,15 +56,16 @@ def test_add_object(start_session, set_up):
     print(response.json())
 
 
-@pytest.mark.medium
-def test_get_object(set_up, new_object_id_and_clear):
-    response = requests.get(f'https://api.restful-api.dev/objects/{new_object_id_and_clear}')
+@pytest.mark.critical
+def test_get_object(set_up, new_object_id):
+    response = requests.get(f'https://api.restful-api.dev/objects/{new_object_id}')
     assert response.status_code == 200
     print('Get object')
     print(response.json())
 
 
-def test_put_object(set_up, new_object_id_and_clear):
+@pytest.mark.medium
+def test_put_object(set_up, new_object_id):
     body = {
         "name": "Apple MacBook M3 Pro",
         "data": {
@@ -77,21 +76,22 @@ def test_put_object(set_up, new_object_id_and_clear):
         }
     }
     headers = {'Content-type': 'application/json'}
-    response = requests.put(f'https://api.restful-api.dev/objects/{new_object_id_and_clear}',
+    response = requests.put(f'https://api.restful-api.dev/objects/{new_object_id}',
                             json=body,
                             headers=headers)
+    print(response.json())
     assert response.status_code == 200, 'Invalid status code'
     assert response.json()['name'] == "Apple MacBook M3 Pro"
     print('Put object')
     print(response.json())
 
 
-def test_patch_object(set_up, new_object_id_and_clear):
+def test_patch_object(set_up, new_object_id):
     body = {
-        "name": "Dell G15 2024 (updated)"
+        "name": "Dell G15 2024 (Updated Name)"
     }
     headers = {'Content-type': 'application/json'}
-    response = requests.patch(f'https://api.restful-api.dev/objects/{new_object_id_and_clear}',
+    response = requests.patch(f'https://api.restful-api.dev/objects/{new_object_id}',
                               json=body,
                               headers=headers)
     assert response.status_code == 200, 'Invalid status code'
@@ -100,8 +100,8 @@ def test_patch_object(set_up, new_object_id_and_clear):
     print(response.json())
 
 
-def test_delete_object(set_up, new_object_id_and_clear):
-    response = requests.delete(f'https://api.restful-api.dev/objects/{new_object_id_and_clear}')
+def test_delete_object(set_up, new_object_id):
+    response = requests.delete(f'https://api.restful-api.dev/objects/{new_object_id}')
     assert response.status_code == 200, 'Invalid status code'
     print('Delete object')
     print(response.json())
