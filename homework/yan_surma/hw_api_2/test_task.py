@@ -95,7 +95,7 @@ def test_patch_object(set_up, new_object_id):
                               json=body,
                               headers=headers)
     assert response.status_code == 200, 'Invalid status code'
-    assert response.json()['name'] == 'Dell G15 2024 (updated)'
+    assert response.json()['name'] == 'Dell G15 2024 (Updated Name)'
     print('Patch object')
     print(response.json())
 
