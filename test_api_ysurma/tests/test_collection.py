@@ -50,5 +50,3 @@ def test_delete_object(create_delete_endpoint, object_id, create_get_endpoint):
     create_delete_endpoint.check_status_code_200()
     create_get_endpoint.get_object_data(object_id)
     create_get_endpoint.check_that_object_doesnt_exists(object_id)
-
-

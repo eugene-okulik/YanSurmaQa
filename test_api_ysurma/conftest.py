@@ -1,4 +1,3 @@
-import allure
 import pytest
 
 from endpoints.create_object import CreateObject

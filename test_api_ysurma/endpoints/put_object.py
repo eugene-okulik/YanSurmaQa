@@ -6,7 +6,7 @@ import allure
 class PutObject(Endpoint):
 
     @allure.step('Put object data')
-    def put_changes_to_object(self,  body, object_id, headers=None):
+    def put_changes_to_object(self, body, object_id, headers=None):
         headers = headers if headers else self.headers
         self.response = requests.put(
             f'{self.url}/{object_id}',

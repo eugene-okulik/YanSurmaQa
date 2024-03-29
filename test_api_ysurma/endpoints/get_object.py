@@ -15,6 +15,3 @@ class GetObject(Endpoint):
 
     def check_that_object_doesnt_exists(self, object_id):
         assert self.json == {'error': f'Oject with id={object_id} was not found.'}
-
-
-

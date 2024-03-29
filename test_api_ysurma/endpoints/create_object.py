@@ -19,5 +19,3 @@ class CreateObject(Endpoint):
         print(f'Create object with id {self.object_id}')
         print(self.json)
         return self.response
-
-
