@@ -8,8 +8,9 @@ class PatchObject(Endpoint):
     @allure.step('Patch object data')
     def patch_changes_to_object(self, body, object_id, headers=None):
         headers = headers if headers else self.headers
+        patch_url = f'{self.url}/{object_id}'
         self.response = requests.patch(
-            f'{self.url}/{object_id}',
+            patch_url,
             json=body,
             headers=headers
         )
