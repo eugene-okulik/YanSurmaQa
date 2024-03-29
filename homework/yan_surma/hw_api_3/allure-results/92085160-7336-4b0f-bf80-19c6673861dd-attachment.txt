@@ -1,0 +1,4 @@
+Before test
+{'message': 'Object with id = ff8081818e21ce2d018e5d577aa045d7 has been deleted.'}
+After test
+End testing
