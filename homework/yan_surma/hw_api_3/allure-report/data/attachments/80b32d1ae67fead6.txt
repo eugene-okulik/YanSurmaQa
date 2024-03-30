@@ -1,4 +1,0 @@
-Start testing
-Before test
-{'id': 'ff8081818e21ce2d018e5d57505e45d1', 'name': 'Lenovo Legion Y7000P', 'createdAt': '2024-03-20T19:29:47.102+00:00', 'data': {'year': 2019, 'price': 1849.99, 'CPU model': 'Intel Core i9', 'Hard disk size': '1 TB'}}
-After test

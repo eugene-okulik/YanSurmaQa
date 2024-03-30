@@ -1,4 +1,0 @@
-Before test
-{'message': 'Object with id = ff8081818e21ce2d018e5d63bd3045e6 has been deleted.'}
-After test
-End testing

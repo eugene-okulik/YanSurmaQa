@@ -1,3 +1,0 @@
-Before test
-{'id': 'ff8081818e21ce2d018e5d63973045e2', 'name': 'ASUS ROG Strix G18 2024', 'createdAt': '2024-03-20T19:43:11.665+00:00', 'data': {'year': 2019, 'price': 1849.99, 'CPU model': 'Intel Core i9', 'Hard disk size': '1 TB'}}
-After test

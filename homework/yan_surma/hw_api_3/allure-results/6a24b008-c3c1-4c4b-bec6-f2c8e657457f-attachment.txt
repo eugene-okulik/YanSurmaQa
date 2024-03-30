@@ -1,3 +1,0 @@
-Before test
-{'id': 'ff8081818e21ce2d018e5d57713245d6', 'name': 'Dell G15 2024 (Updated Name)', 'updatedAt': '2024-03-20T19:29:56.305+00:00', 'data': {'year': 2019, 'price': 1849.99, 'CPU model': 'Intel Core i9', 'Hard disk size': '1 TB'}}
-After test
