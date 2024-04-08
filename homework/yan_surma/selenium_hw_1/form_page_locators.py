@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class FormPageLocators:
     FIRST_NAME_LOCATOR = By.XPATH, '//input[@id="firstName"]'
     LAST_NAME_LOCATOR = By.XPATH, '//input[@id="lastName"]'
