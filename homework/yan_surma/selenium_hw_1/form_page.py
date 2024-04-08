@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from form_page_locators import *
 
 
-class FormPage:
+class FormPage(FormPageLocators):
 
     def __init__(self, driver):
         self.driver = driver
@@ -17,52 +17,52 @@ class FormPage:
         return self.driver.execute_script("arguments[0].scrollIntoView();", scroll)
 
     def first_name(self):
-        return self.driver.find_element(*FIRST_NAME_LOCATOR)
+        return self.driver.find_element(*self.FIRST_NAME_LOCATOR)
 
     def last_name(self):
-        return self.driver.find_element(*LAST_NAME_LOCATOR)
+        return self.driver.find_element(*self.LAST_NAME_LOCATOR)
 
     def email_input(self):
-        return self.driver.find_element(*EMAIL_LOCATOR)
+        return self.driver.find_element(*self.EMAIL_LOCATOR)
 
     def radio_button(self):
-        return self.driver.find_element(*RADIO_BUTTON_LOCATOR)
+        return self.driver.find_element(*self.RADIO_BUTTON_LOCATOR)
 
     def number(self):
-        return self.driver.find_element(*NUMBER_LOCATOR)
+        return self.driver.find_element(*self.NUMBER_LOCATOR)
 
     def date_picker(self):
-        return self.driver.find_element(*DATE_PICKER_LOCATOR)
+        return self.driver.find_element(*self.DATE_PICKER_LOCATOR)
 
     def subjects_dropdown(self):
-        return self.driver.find_element(*SUBJECTS_DROPDOWN_LOCATOR)
+        return self.driver.find_element(*self.SUBJECTS_DROPDOWN_LOCATOR)
 
     def checkbox1(self):
-        return self.driver.find_element(*CHECKBOX_1_LOCATOR)
+        return self.driver.find_element(*self.CHECKBOX_1_LOCATOR)
 
     def checkbox3(self):
-        return self.driver.find_element(*CHECKBOX_3_LOCATOR)
+        return self.driver.find_element(*self.CHECKBOX_3_LOCATOR)
 
     def textarea(self):
-        return self.driver.find_element(*TEXTAREA_LOCATOR)
+        return self.driver.find_element(*self.TEXTAREA_LOCATOR)
 
     def city_selector(self):
-        return self.driver.find_element(*CITY_SELECTOR_LOCATOR)
+        return self.driver.find_element(*self.CITY_SELECTOR_LOCATOR)
 
     def state_selector(self):
-        return self.driver.find_element(*STATE_SELECTOR_LOCATOR)
+        return self.driver.find_element(*self.STATE_SELECTOR_LOCATOR)
 
     def submit_button(self):
-        return self.driver.find_element(*SUBMIT_BUTTON_LOCATOR)
+        return self.driver.find_element(*self.SUBMIT_BUTTON_LOCATOR)
 
     def labels(self):
-        return self.driver.find_elements(*LABELS_LOCATORS)
+        return self.driver.find_elements(*self.LABELS_LOCATORS)
 
     def values(self):
-        return self.driver.find_elements(*VALUES_LOCATORS)
+        return self.driver.find_elements(*self.VALUES_LOCATORS)
 
     def close_button(self):
-        return self.driver.find_element(*CLOSE_BUTTON_LOCATOR)
+        return self.driver.find_element(*self.CLOSE_BUTTON_LOCATOR)
 
     # Actions
     def pick_date(self, date):
