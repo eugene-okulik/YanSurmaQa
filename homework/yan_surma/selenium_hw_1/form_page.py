@@ -1,6 +1,7 @@
 import time
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from form_page_locators import *
+from homework.yan_surma.selenium_hw_1.form_page_locators import FormPageLocators
 
 
 class FormPage(FormPageLocators):
