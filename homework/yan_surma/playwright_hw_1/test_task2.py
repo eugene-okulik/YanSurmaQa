@@ -46,3 +46,4 @@ def test_fill_form(page: Page):
     values = page.locator(loc.VALUES).all_text_contents()
     for label, value in zip(labels, values):
         print(f'{label}:{value}')
+
