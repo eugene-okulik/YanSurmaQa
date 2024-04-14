@@ -15,4 +15,3 @@ CITY_DROPDOWN = '//div[@id="city"]'
 CITY_OPTION = '//div[@id="react-select-4-option-0"]'
 LABELS = '//tbody/tr/td[1]'
 VALUES = '//tbody/tr/td[2]'
-
