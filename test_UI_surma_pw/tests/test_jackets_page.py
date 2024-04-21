@@ -1,7 +1,5 @@
 import allure
 
-from conftest import jackets
-
 
 @allure.feature('Smoke')
 def test_add_item_sort_by_position(jackets):

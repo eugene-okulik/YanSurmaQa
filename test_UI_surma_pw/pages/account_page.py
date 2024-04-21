@@ -13,5 +13,5 @@ class MyAccount(BasePage):
         split_text = account_text.split(sep='\n')
         name_value, email_value = split_text[0], split_text[1]
         account_name = first_name + ' ' + last_name
-        assert account_name == name_value, f"Expected {account_name}, but got {name_value}"
-        assert email == email_value, f"Expected {email}, but got {email_value}"
+        assert account_name == name_value
+        assert email == email_value

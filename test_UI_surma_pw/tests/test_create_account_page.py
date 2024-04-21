@@ -1,6 +1,6 @@
 import allure
 import pytest
-from conftest import create_acc, acc
+
 from data.invalid_data import empty_fields, not_equal_passwords
 
 

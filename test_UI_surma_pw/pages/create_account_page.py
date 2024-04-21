@@ -43,17 +43,20 @@ class CreateAccountPage(BasePage):
     def check_for_success_auth_alert(self):
         success_alert = self.find(loc.SUCCESS_AUTH_ALERT)
         expect(success_alert).to_be_visible()
-        expect(success_alert).to_have_text('Thank you for registering with Main Website Store.')
+        success_message = 'Thank you for registering with Main Website Store.'
+        expect(success_alert).to_have_text(success_message)
 
     @allure.step('Check for field error messages')
     def check_for_field_error_messages(self):
-        error_alerts = self.page.get_by_text('This is a required field.')
-        expect(error_alerts).to_have_text('This is a required field.')
+        error_message = 'This is a required field.'
+        error_alerts = self.page.get_by_text(error_message)
+        expect(error_alerts).to_have_text(error_message)
 
     @allure.step('Check for password error message')
     def check_for_password_error_messages(self):
-        error_alerts = self.page.get_by_text('Please enter the same value again.')
-        expect(error_alerts).to_have_text('Please enter the same value again.')
+        error_message = 'Please enter the same value again.'
+        error_alerts = self.page.get_by_text(error_message)
+        expect(error_alerts).to_have_text(error_message)
 
     @allure.step('Fill authorization form')
     # Methods

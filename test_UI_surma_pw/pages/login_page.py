@@ -39,6 +39,8 @@ class LoginPage(BasePage):
     def check_for_login_error(self):
         login_error = self.find(loc.LOGIN_ERROR)
         expect(login_error).to_be_visible()
-        expect(login_error).to_have_text(
-            'The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.'
+        error_message = (
+            'The account sign-in was incorrect or your account is '
+            'disabled temporarily. Please wait and try again later.'
         )
+        expect(login_error).to_have_text(error_message)

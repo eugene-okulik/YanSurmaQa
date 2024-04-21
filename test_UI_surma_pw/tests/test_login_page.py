@@ -1,7 +1,5 @@
 import allure
 
-from conftest import login
-
 
 @allure.feature('Smoke')
 def test_login(login):

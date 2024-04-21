@@ -28,7 +28,7 @@ class JacketsPage(BasePage):
     def check_item_price(self, item_price_value):
         sleep(2)
         page_item_price = self.find(loc.PAGE_ITEM_PRICE).inner_text()
-        assert page_item_price == item_price_value, f'Price {page_item_price} not equal to {item_price_value}'
+        assert page_item_price == item_price_value
 
     @allure.step('Switch to list view')
     def switch_to_list_view(self):
