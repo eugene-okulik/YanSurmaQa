@@ -1,0 +1,8 @@
+ITEM_BANNER = '(//div[@class="product-item-info"])[1]'
+ITEM_NAME = '(//a[@class="product-item-link"])[1]'
+ITEM_PRICE = '(//span[@class="price"])[1]'
+ADD_TO_CARD_BUTTON = '(//button[@title="Add to Cart"])[1]'
+LIST_VIEW = '(//a[@class="modes-mode mode-list"])[1]'
+PAGE_ITEM_PRICE = '(//span[@class="price"])[1]'
+PAGE_ITEM_NAME = '//h1[@class="page-title"]'
+SORTER = '(//select[@id="sorter"])[1]'
