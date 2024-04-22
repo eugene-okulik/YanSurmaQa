@@ -3,11 +3,11 @@ from time import sleep
 import allure
 
 from pages.base_page import BasePage
-from pages.locators import jackets_page_locators as loc
+from pages.locators import eco_page_locators as loc
 
 
-class JacketsPage(BasePage):
-    page_url = '/women/tops-women/jackets-women.html'
+class EcoFriendlyPage(BasePage):
+    page_url = '/collections/eco-friendly.html'
 
     @allure.step('Hover on item banner')
     def hover_on_item_banner(self):
