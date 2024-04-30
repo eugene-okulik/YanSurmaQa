@@ -1,0 +1,23 @@
+TASK 2
+
+Go to first line in file: g  <  ESC-< 
+Go to last line in file:  G  >  ESC->
+Forward one window: 
+Forward one line:  e  ^E  j  ^N  CR
+Backward one line: y  ^Y  k  ^K  ^P
+Search forward for matching line: ?pattern 
+Search backward for matching line: ?pattern 
+Repeat previous search: n
+Repeat previous search in reverse direction: N
+
+TASK 3
+
+/dev/null: crw-rw-rw- 1 root root 1, 3 Dec 31 16:23 /dev/null (символьное устройство)
+/dev/zero: crw-rw-rw- 1 root root 1, 5 Dec 31 16:23 /dev/zero (символьное устройство)
+/dev/sda: ls: cannot access '/dev/sda': No such file or directory (такого файлика нет)
+/dev/tty: crw-rw-rw- 1 root tty       5,   0 Apr 30 08:53 tty (символьное устройство)
+/root: drwx------   8 root root      4096 Apr 26 15:13 root (папка, домашний каталог пользователя)
+/etc/passwd:  -rw-r--r-- 1 root             root       5267 Apr 29 20:01 passwd (текстовый файл)
+/proc/mounts: lrwxrwxrwx 1 root root 11 Apr 30 14:39 proc/mounts -> self/mounts (символическая ссылка)
+/bin/ls: -rwxr-xr-x 1 root root 142144 Sep  5  2019 bin/ls (исполняемый файл команды ls)
+/bin/zcat: -rwxr-xr-x 1 root root 1984 Apr  8  2022 /bin/zcat (Это исполняемый файл команды zcat)
