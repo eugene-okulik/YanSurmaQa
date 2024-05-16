@@ -2,4 +2,4 @@ from time import sleep
 
 while True:
     print('Docker unlocked!')
-    sleep(2)
+    sleep(1)
